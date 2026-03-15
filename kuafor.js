@@ -1,14 +1,24 @@
 const liste = document.getElementById("panelListe");
 
+/* LOCALSTORAGE'DAN RANDEVULARI AL */
+
+function randevulariAl(){
+
+return JSON.parse(localStorage.getItem("randevular")) || [];
+
+}
+
+/* RANDEVULARI GÖSTER */
+
 function randevulariGoster(){
 
 liste.innerHTML = "";
 
-let randevular = JSON.parse(localStorage.getItem("randevular")) || [];
+let randevular = randevulariAl();
 
-/* RANDEVULARI TARİH VE SAATE GÖRE SIRALA */
+/* TARİH VE SAATE GÖRE SIRALA */
 
-randevular.sort(function(a,b){
+randevular.sort((a,b)=>{
 
 const aZaman = new Date(a.tarih + "T" + a.saat);
 const bZaman = new Date(b.tarih + "T" + b.saat);
@@ -17,20 +27,22 @@ return aZaman - bZaman;
 
 });
 
-/* RANDEVULARI EKRANA YAZDIR */
+/* RANDEVULARI EKRANA YAZ */
 
-randevular.forEach(function(r,index){
+randevular.forEach((r,index)=>{
 
 const div = document.createElement("div");
 
 div.classList.add("randevu-card");
+
+const telefon = r.telefon.replace(/\s/g,'');
 
 div.innerHTML = `
 <strong>${r.tarih} - ${r.saat}</strong><br>
 
 ${r.adSoyad}<br>
 
-📞 ${r.telefon}
+📞 <a href="tel:${telefon}" class="telefon">${r.telefon}</a>
 
 <button onclick="sil(${index})">Sil</button>
 
@@ -47,7 +59,7 @@ liste.appendChild(div);
 
 function sil(index){
 
-let randevular = JSON.parse(localStorage.getItem("randevular")) || [];
+let randevular = randevulariAl();
 
 randevular.splice(index,1);
 
@@ -57,13 +69,13 @@ randevulariGoster();
 
 }
 
-/* SAYFA AÇILINCA */
+/* SAYFA AÇILINCA ÇALIŞTIR */
 
-randevulariGoster();
+document.addEventListener("DOMContentLoaded", randevulariGoster);
 
-/* BAŞKA SEKMEDEN RANDEVU EKLENİRSE OTOMATİK GÜNCELLE */
+/* BAŞKA SEKMEDEN RANDEVU EKLENİRSE GÜNCELLE */
 
-window.addEventListener("storage", function(event){
+window.addEventListener("storage", (event)=>{
 
 if(event.key === "randevular"){
 

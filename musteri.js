@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function(){
+
+/* DOM */
+
+const form = document.getElementById("randevuForm");
+const liste = document.getElementById("randevuListesi");
+const telefonInput = document.getElementById("telefon");
+const hizmetSelect = document.getElementById("hizmet");
+const saatSelect = document.getElementById("saat");
+
+
 /* TOAST */
 
 function toastMesaj(mesaj){
@@ -12,15 +23,6 @@ toast.classList.remove("show");
 },3000);
 
 }
-
-
-/* DOM */
-
-const form = document.getElementById("randevuForm");
-const liste = document.getElementById("randevuListesi");
-const telefonInput = document.getElementById("telefon");
-const hizmetSelect = document.getElementById("hizmet");
-const saatSelect = document.getElementById("saat");
 
 
 /* TELEFON FORMAT */
@@ -84,8 +86,6 @@ return parseInt(sonuc[0]);
 function saatleriOlustur(){
 
 saatSelect.innerHTML="<option value=''>Saat Seçiniz</option>";
-
-let randevular=randevuGetir();
 
 let baslangic=9*60;
 let bitis=18*60;
@@ -162,7 +162,7 @@ liste.appendChild(div);
 
 /* RANDEVU SİL */
 
-function silRandevu(i){
+window.silRandevu = function(i){
 
 let r=randevuGetir();
 
@@ -251,19 +251,20 @@ randevulariGoster();
 });
 
 
-document.addEventListener("DOMContentLoaded", function(){
+/* TAKVİM */
 
-    /* TAKVİM */
+flatpickr("#tarih",{
 
-    flatpickr("#tarih",{
-        locale:"tr",
-        dateFormat:"d.m.Y",
-        minDate:"today"
-    });
+locale:"tr",
+dateFormat:"d.m.Y",
+minDate:"today"
 
-    /* SAYFA */
+});
 
-    saatleriOlustur();
-    randevulariGoster();
+
+/* SAYFA */
+
+saatleriOlustur();
+randevulariGoster();
 
 });

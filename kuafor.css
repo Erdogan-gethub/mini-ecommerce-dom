@@ -1,0 +1,181 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, sans-serif;
+background:#f4f4f4;
+padding:20px;
+}
+
+
+/* PANEL */
+
+.panel-container{
+
+max-width:500px;
+width:100%;
+margin:40px auto;
+background:white;
+padding:22px;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+}
+
+
+/* BAŞLIK */
+
+h1{
+text-align:center;
+margin-bottom:15px;
+font-size:22px;
+color:#111;
+}
+
+
+/* İSTATİSTİK */
+
+.istatistik{
+
+background:#fff4f4;
+border:1px solid #ffd6d6;
+padding:10px;
+border-radius:6px;
+text-align:center;
+font-size:15px;
+font-weight:700;
+color:#c00000;
+margin-bottom:15px;
+
+}
+
+
+/* BOŞ MESAJ */
+
+.bos-mesaj{
+
+text-align:center;
+color:#666;
+font-size:14px;
+margin-top:10px;
+
+}
+
+
+/* RANDEVU KARTI */
+
+.randevu-card{
+
+background:#f7f7f7;
+padding:12px;
+border-radius:8px;
+margin-bottom:12px;
+line-height:1.4;
+border-left:4px solid #d40000;
+transition:0.2s;
+
+}
+
+.randevu-card:hover{
+background:#f1f1f1;
+}
+
+
+/* TARİH */
+
+.randevu-card strong{
+
+display:block;
+font-size:15px;
+font-weight:700;
+color:#c00000;
+margin-bottom:3px;
+
+}
+
+
+/* İSİM */
+
+.isim{
+
+font-weight:700;
+font-size:15px;
+color:#111;
+
+}
+
+
+/* HİZMET */
+
+.hizmet{
+
+color:#444;
+font-size:14px;
+
+}
+
+
+/* ALT SATIR */
+
+.randevu-alt{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:6px;
+
+}
+
+
+/* TELEFON */
+
+.telefon{
+
+text-decoration:none;
+color:#111;
+font-weight:600;
+font-size:14px;
+
+}
+
+
+/* BUTON */
+
+button{
+
+background:#d40000;
+color:white;
+border:none;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+font-size:13px;
+
+}
+
+button:hover{
+background:#a80000;
+}
+
+
+/* MOBİL */
+
+@media (max-width:600px){
+
+.panel-container{
+margin:20px auto;
+padding:18px;
+}
+
+h1{
+font-size:20px;
+}
+
+button{
+width:auto;
+}
+
+}

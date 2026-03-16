@@ -251,18 +251,19 @@ randevulariGoster();
 });
 
 
-/* TAKVİM */
+document.addEventListener("DOMContentLoaded", function(){
 
-flatpickr("#tarih",{
+    /* TAKVİM */
 
-locale:"tr",
-dateFormat:"d.m.Y",
-minDate:"today"
+    flatpickr("#tarih",{
+        locale:"tr",
+        dateFormat:"d.m.Y",
+        minDate:"today"
+    });
+
+    /* SAYFA */
+
+    saatleriOlustur();
+    randevulariGoster();
 
 });
-
-
-/* SAYFA */
-
-saatleriOlustur();
-randevulariGoster();

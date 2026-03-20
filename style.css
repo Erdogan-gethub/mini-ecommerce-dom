@@ -13,17 +13,17 @@ body{
 
 /* BAŞLIK */
 .total-area{
-  text-align: center;
+  text-align:center;
   font-size: 26px;
   font-weight: bold;
   margin: 20px 0;
   color: white;
 }
 
-/* ÜRÜNLER (GRID) */
+/* ÜRÜNLER */
 .products{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* PC */
   gap: 25px;
   padding: 20px;
   max-width: 1200px;
@@ -95,20 +95,26 @@ button:hover{
   gap: 5px;
 }
 
-.artı{ background-color: #22c55e; }
-.eksi{ background-color: #ef4444; }
-.sil{  background-color: #6b7280; }
+.artı{
+  background-color: #22c55e;
+}
 
-/* 🔥 RESPONSIVE */
+.eksi{
+  background-color: #ef4444;
+}
 
-/* TABLET */
+.sil{
+  background-color: #6b7280;
+}
+
+/* 🔥 TABLET */
 @media (max-width: 992px){
   .products{
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* TELEFON */
+/* 🔥 TELEFON */
 @media (max-width: 600px){
   .products{
     grid-template-columns: 1fr;
@@ -116,11 +122,6 @@ button:hover{
 
   .total-area{
     font-size: 20px;
-  }
-
-  .card{
-    width: 90%;
-    margin: auto;
   }
 
   .card img{

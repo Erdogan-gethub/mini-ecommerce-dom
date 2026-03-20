@@ -111,9 +111,11 @@ button:hover{
 /* 🔥 TELEFON (SADECE BURASI DEĞİŞTİ) */
 @media (max-width: 600px){
   .products{
-    grid-template-columns: 1fr;   /* dikey */
-    padding: 10px 15px;           /* sağ-sol boşluk */
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px 15px;
   }
+}
 
   .total-area{
     font-size: 20px;

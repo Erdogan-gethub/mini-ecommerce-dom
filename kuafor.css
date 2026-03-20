@@ -32,14 +32,15 @@ body{
   color: white;
 }
 
-/* PRODUCTS */
 .products{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+
+  max-width: 900px;   /* 👈 sağ-sol daraltır */
+  margin: 0 auto;     /* 👈 ortalar */
+
   padding: 20px;
-  max-width: 1200px;
-  margin: auto;
 }
 
 /* CARD */

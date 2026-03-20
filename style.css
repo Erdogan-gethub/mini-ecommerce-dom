@@ -14,125 +14,114 @@ body{
 /* BAŞLIK */
 .total-area{
   text-align:center;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 15px 0;
   color: white;
 }
 
 /* ÜRÜNLER */
 .products{
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* PC */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
-  max-width: 1200px;
+  max-width: 900px;
   margin: auto;
 }
 
-/* KART */
+/* 🔥 KART */
 .card{
   background-color: blanchedalmond;
   text-align: center;
-  padding: 8px; /* küçüldü */
+  padding: 10px;          /* küçüldü */
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  max-width: 220px;       /* daraltıldı */
+  margin: auto;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: 0.3s;
-}
-
-.card:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
 /* RESİM */
 .card img{
   width: 100%;
-  height: 110px; /* küçüldü */
+  height: 140px;          /* küçüldü */
   object-fit: contain;
 }
 
 /* YAZILAR */
 .card h2{
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
 }
 
 .card p{
   font-size: 13px;
-  font-weight: bold;
-  color: #444;
   margin: 3px 0;
 }
 
-/* BUTON */
+/* 🔥 BUTON (EN KRİTİK) */
 button{
-  padding: 4px 6px;
+  padding: 5px 8px;
   border-radius: 5px;
   border: none;
   background-color: #3b82f6;
   color: white;
   cursor: pointer;
   font-size: 12px;
-  transition: 0.3s;
-}
-
-button:hover{
-  background-color: #1e4ed8;
-  transform: scale(1.05);
 }
 
 .btn{
-  width: 100%;
-  margin: 3px 0;
+  width: auto;          /* 100% KALDIRILDI */
+  margin: 6px auto;
+  display: block;
 }
 
 /* ACTION */
 .action{
   display: flex;
   justify-content: center;
-  gap: 3px;
+  gap: 4px;
 }
 
 .artı{ background-color: #22c55e; }
 .eksi{ background-color: #ef4444; }
 .sil{  background-color: #6b7280; }
 
-/* 🔥 TABLET */
+/* TABLET */
 @media (max-width: 992px){
   .products{
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* 🔥 TELEFON */
+/* TELEFON */
 @media (max-width: 600px){
   .products{
-    grid-template-columns: repeat(3, 1fr); /* 3 sütun */
+    grid-template-columns: repeat(2, 1fr); /* 2 yan yana */
     gap: 10px;
   }
 
-  .total-area{
-    font-size: 18px;
+  .card{
+    max-width: 160px;
+    padding: 8px;
   }
 
   .card img{
-    height: 90px; /* daha da küçüldü */
+    height: 100px;
   }
 
   .card h2{
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .card p{
-    font-size: 11px;
+    font-size: 12px;
   }
 
   button{
     font-size: 11px;
-    padding: 3px;
+    padding: 4px;
   }
 }

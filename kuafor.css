@@ -1,188 +1,202 @@
-/* RESET */
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* BODY */
 body{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
-}
-/* RESET */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+font-family:Arial, sans-serif;
+background:#f4f4f4;
+padding:20px;
 }
 
-/* BODY */
-body{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+
+/* 🔥 PANEL */
+
+.panel-container{
+max-width:520px;
+width:100%;
+margin:40px auto;
+background:white;
+padding:24px;
+border-radius:12px;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
 }
 
-/* BAŞLIK */
-.total-area{
-  text-align:center;
-  font-size: 26px;
-  font-weight: bold;
-  margin: 20px 0;
-  color: white;
+
+/* 🔥 LİSTEYİ KONTROL ALTINA AL */
+
+#panelListe{
+width:100%;
+display:flex;
+flex-direction:column;
+gap:12px;
 }
 
-.products{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
 
-  max-width: 900px;   /* 👈 sağ-sol daraltır */
-  margin: 0 auto;     /* 👈 ortalar */
+/* 🔥 BAŞLIK */
 
-  padding: 20px;
+h1{
+text-align:center;
+margin-bottom:18px;
+font-size:22px;
+color:#111;
 }
 
-/* CARD */
-.card{
-  background-color: blanchedalmond;
-  text-align: center;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+/* 🔥 İSTATİSTİK */
+
+.istatistik{
+background:#fff4f4;
+border:1px solid #ffd6d6;
+padding:12px;
+border-radius:8px;
+text-align:center;
+font-size:14px;
+font-weight:700;
+color:#c00000;
+margin-bottom:18px;
 }
 
-/* IMAGE */
-.card img{
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
+
+/* 🔥 FİLTRE */
+
+select{
+margin-bottom:12px;
+padding:6px 10px;
+border-radius:6px;
+border:1px solid #ddd;
+font-size:13px;
 }
 
-/* TEXT */
-.card h2{
-  font-size: 18px;
+
+/* 🔥 BOŞ MESAJ */
+
+.bos-mesaj{
+text-align:center;
+color:#888;
+font-size:14px;
+margin-top:15px;
 }
 
-.card p{
-  font-weight: bold;
-  margin: 5px 0;
+
+/* 🔥 RANDEVU KARTI (KRİTİK DÜZELTME) */
+
+.randevu-card{
+width:100%;
+max-width:100%; /* panel dışına taşmaz */
+background:white;
+padding:15px;
+border-radius:10px;
+border-left:4px solid #d40000;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+transition:0.2s;
 }
 
-/* BUTTON */
+.randevu-card:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
+}
+
+
+/* 🔥 TARİH */
+
+.randevu-card strong{
+display:block;
+font-size:15px;
+font-weight:700;
+color:#c00000;
+margin-bottom:6px;
+}
+
+
+/* 🔥 KUAFÖR (DAHA NET) */
+
+.kuafor{
+font-size:13px;
+color:#222;
+font-weight:700;
+margin-bottom:4px;
+}
+
+
+/* 🔥 İSİM */
+
+.isim{
+font-weight:700;
+font-size:15px;
+color:#111;
+margin-bottom:4px;
+}
+
+
+/* 🔥 HİZMET */
+
+.hizmet{
+color:#555;
+font-size:14px;
+margin-bottom:4px;
+}
+
+
+/* 🔥 ALT SATIR */
+
+.randevu-alt{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:10px;
+padding-top:8px;
+border-top:1px solid #eee; /* 🔥 AYIRICI */
+}
+
+
+/* 🔥 TELEFON */
+
+.telefon{
+text-decoration:none;
+color:#0a66c2;
+font-weight:600;
+font-size:14px;
+display:flex;
+align-items:center;
+gap:5px;
+}
+
+.telefon:hover{
+text-decoration:underline;
+}
+
+
+/* 🔥 BUTON */
+
 button{
-  padding: 6px 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #3b82f6;
-  color: white;
-  cursor: pointer;
+background:#d40000;
+color:white;
+border:none;
+padding:6px 14px;
+border-radius:6px;
+cursor:pointer;
+font-size:13px;
+transition:0.2s;
 }
 
-.btn{
-  width: auto;          /* sadece bunu düzelttik */
-  margin: 5px auto;
-  display: block;
+button:hover{
+background:#a80000;
 }
 
-/* ACTION */
-.action{
-  display: flex;
-  justify-content: center;
-  gap: 5px;
+
+/* 🔥 MOBİL */
+
+@media (max-width:600px){
+
+.panel-container{
+margin:20px auto;
+padding:18px;
 }
 
-.artı{ background-color: #22c55e; }
-.eksi{ background-color: #ef4444; }
-.sil{  background-color: #6b7280; }
-
-/* TABLET */
-@media (max-width: 992px){
-  .products{
-    grid-template-columns: repeat(2, 1fr);
-  }
+h1{
+font-size:20px;
 }
 
-/* TELEFON */
-@media (max-width: 600px){
-  .products{
-    grid-template-columns: repeat(2, 1fr); /* stabil */
-  }
-
-  .total-area{
-    font-size: 20px;
-  }
 }
-/* BAŞLIK */
-.total-area{
-  text-align:center;
-  font-size: 22px;
-  margin: 15px 0;
-  color: white;
-}
-
-/* 🔥 PRODUCTS → TELEFONDA 3 SÜTUN */
-.products{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 YAN YANA */
-  gap: 8px;
-  padding: 10px;
-}
-
-/* KART */
-.card{
-  background-color: blanchedalmond;
-  text-align: center;
-  padding: 6px;              /* küçüldü */
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* RESİM */
-.card img{
-  width: 100%;
-  height: 80px;              /* küçüldü */
-  object-fit: contain;
-}
-
-/* YAZI */
-.card h2{
-  font-size: 12px;
-}
-
-.card p{
-  font-size: 11px;
-  margin: 2px 0;
-}
-
-/* 🔥 BUTON (TAŞMA YOK) */
-button{
-  padding: 3px 6px;
-  font-size: 11px;
-  border-radius: 5px;
-  border: none;
-  background-color: #3b82f6;
-  color: white;
-}
-
-.btn{
-  width: fit-content;   /* 🔥 olay bu */
-  margin: 4px auto;
-  display: block;
-}
-
-/* ACTION */
-.action{
-  display: flex;
-  justify-content: center;
-  gap: 2px;
-}
-
-.artı{ background-color: #22c55e; }
-.eksi{ background-color: #ef4444; }
-.sil{  background-color: #6b7280; }

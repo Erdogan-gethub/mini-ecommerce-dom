@@ -112,8 +112,9 @@ button:hover{
 /* TELEFON */
 @media (max-width: 600px){
   .products{
-    grid-template-columns: 1fr; /* eski hali */
+    padding: 10px 15px; /* üst-alt 10, sağ-sol 15 */
   }
+}
 
   .total-area{
     font-size: 20px;

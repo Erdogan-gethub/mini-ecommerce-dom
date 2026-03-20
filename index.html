@@ -1,130 +1,52 @@
-/* RESET */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"href="style.css">
+</head>
+<body>
+  <h2 class="total-area">Toplam Tutar:<span id="toplam">0</h2>
+  <div class="products">
+    <div class="card">
+      <img src="images/headphone.jpg">
+      <h2>Kulaklık</h2>
+      <p>1000₺</p>
+      <p class="card-info">Ürün Adeti:<span class="count">0</span></p>
+      <button class="btn">Sepete Ekle</button>
+<div class="action">
+  <button class="artı">+</button> 
+<button class="eksi">-</button> 
+<button class="sil">sil</button> 
+</div>
+</div>
+<div class="card">
+      <img src="images/phone.jpg">
+      <h2>Cep Telefonu</h2>
+      <p>15000₺</p>
+      <p class="card-info">Ürün Adeti:<span class="count">0</span></p>
+      <button class="btn">Sepete Ekle</button>
+<div class="action">
+  <button class="artı">+</button> 
+<button class="eksi">-</button> 
+<button class="sil">sil</button> 
+</div>
+</div>
+<div class="card">
+      <img src="images/watch.jpg">
+      <h2>Kol Saati</h2>
+      <p>5000₺</p>
+      <p class="card-info">Ürün Adeti:<span class="count">0</span></p>
+      <button class="btn">Sepete Ekle</button>
+<div class="action">
+  <button class="artı">+</button> 
+<button class="eksi">-</button> 
+<button class="sil">sil</button> 
+</div>
+    </div>
 
-/* BODY */
-body{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
-}
-
-/* BAŞLIK */
-.total-area{
-  text-align:center;
-  font-size: 26px;
-  font-weight: bold;
-  margin: 20px 0;
-  color: white;
-}
-
-/* ÜRÜNLER */
-.products{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* PC */
-  gap: 25px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* KART */
-.card{
-  background-color: blanchedalmond;
-  text-align: center;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: 0.3s;
-}
-
-.card:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-
-/* RESİM */
-.card img{
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-}
-
-/* YAZILAR */
-.card h2{
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.card p{
-  font-weight: bold;
-  color: #444;
-  margin: 5px 0;
-}
-
-/* BUTON */
-button{
-  padding: 6px 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #3b82f6;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover{
-  background-color: #1e4ed8;
-  transform: scale(1.05);
-}
-
-.btn{
-  width: 100%;
-  margin: 5px 0;
-}
-
-/* ACTION */
-.action{
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-}
-
-.artı{
-  background-color: #22c55e;
-}
-
-.eksi{
-  background-color: #ef4444;
-}
-
-.sil{
-  background-color: #6b7280;
-}
-
-/* 🔥 TABLET */
-@media (max-width: 992px){
-  .products{
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 🔥 TELEFON */
-@media (max-width: 600px){
-  .products{
-    grid-template-columns: 1fr;
-  }
-
-  .total-area{
-    font-size: 20px;
-  }
-
-  .card img{
-    height: 200px;
-  }
-}
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

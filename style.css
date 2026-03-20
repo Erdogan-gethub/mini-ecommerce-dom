@@ -20,10 +20,10 @@ body{
   color: white;
 }
 
-/* ÜRÜNLER */
+/* 🔥 ÜRÜNLER (PRO GRID) */
 .products{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
   padding: 20px;
   max-width: 1200px;
@@ -96,24 +96,13 @@ button:hover{
 .eksi{ background-color: #ef4444; }
 .sil{  background-color: #6b7280; }
 
-/* 🔥 TABLET */
-@media (max-width: 992px){
-  .products{
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 🔥 TELEFON */
-@media (max-width: 600px){
-  .products{
-    grid-template-columns: 1fr;
+/* 🔥 KÜÇÜK EKRAN İNCE AYAR */
+@media (max-width: 500px){
+  .card img{
+    height: 140px;
   }
 
   .total-area{
     font-size: 20px;
-  }
-
-  .card img{
-    height: 200px;
   }
 }

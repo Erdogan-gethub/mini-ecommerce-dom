@@ -1,97 +1,124 @@
-/* GENEL AYARLAR */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* RESET */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: sans-serif;
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-    padding: 10px;
+/* BODY */
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
 }
 
-.total-area {
-    text-align: center;
-    color: white;
+/* BAŞLIK */
+.total-area{
+  text-align:center;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: white;
+}
+
+/* ÜRÜNLER */
+.products{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* PC */
+  gap: 25px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* KART */
+.card{
+  background-color: blanchedalmond;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* RESİM */
+.card img{
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+/* YAZILAR */
+.card h2{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card p{
+  font-weight: bold;
+  color: #444;
+  margin: 5px 0;
+}
+
+/* BUTON */
+button{
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover{
+  background-color: #1e4ed8;
+  transform: scale(1.05);
+}
+
+/* 🔥 SADECE BURASI DÜZELTİLDİ */
+.btn{
+  width: auto;      /* 100% kaldırıldı */
+  margin: 5px auto;
+  display: block;
+}
+
+/* ACTION */
+.action{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.artı{ background-color: #22c55e; }
+.eksi{ background-color: #ef4444; }
+.sil{  background-color: #6b7280; }
+
+/* TABLET */
+@media (max-width: 992px){
+  .products{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* TELEFON */
+@media (max-width: 600px){
+  .products{
+    grid-template-columns: 1fr; /* eski hali */
+  }
+
+  .total-area{
     font-size: 20px;
-    margin-bottom: 15px;
-}
+  }
 
-/* ÜRÜN DİZİLİMİ - HEM MASAÜSTÜ HEM MOBİLDE 3 YAN YANA */
-.products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 🔥 Olay burada: Her zaman 3 sütun */
-    gap: 8px; /* Boşlukları daralttık ki sığsın */
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* KART TASARIMI */
-.card {
-    background-color: blanchedalmond;
-    text-align: center;
-    padding: 8px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-width: 0; /* İçeriğin kartı patlatmasını önler */
-}
-
-.card img {
-    width: 100%;
-    height: 70px; /* Mobilde resimler küçük olmalı */
-    object-fit: contain;
-}
-
-.card h2 {
-    font-size: 11px; /* Yazılar çok küçük olmalı yoksa sığmaz */
-    margin: 4px 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Uzun isimleri keser (...) koyar */
-}
-
-.card p {
-    font-size: 10px;
-    font-weight: bold;
-}
-
-/* BUTONLAR */
-button {
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    font-size: 9px; /* Buton yazıları minyatür */
-}
-
-.btn {
-    background-color: #3b82f6;
-    padding: 5px 2px;
-    margin: 5px 0;
-    width: 100%;
-}
-
-.action {
-    display: flex;
-    gap: 3px;
-    justify-content: center;
-}
-
-.action button {
-    padding: 4px 2px;
-    flex: 1;
-}
-
-.artı { background-color: #22c55e; }
-.eksi { background-color: #ef4444; }
-.sil { background-color: #6b7280; }
-
-/* TELEFON İÇİN EKSTRA AYAR (Opsiyonel) */
-@media (max-width: 400px) {
-    .total-area { font-size: 16px; }
-    .card h2 { font-size: 10px; }
-    .card p { font-size: 9px; }
+  .card img{
+    height: 200px;
+  }
 }

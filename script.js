@@ -1,0 +1,55 @@
+const cards=document.querySelectorAll(".card");
+const toplams=document.querySelector("#toplam");
+
+let geneltoplam=0;
+function gunceltoplam(){
+       toplams.textContent=geneltoplam.toLocaleString("tr-TR")+"₺";
+}
+cards.forEach(function(card,index){
+       let adet=Number(localStorage.getItem("urun_adet_"+index))||0;
+       const count=card.querySelector(".count");
+       const artı=card.querySelector(".artı");
+       const eksi=card.querySelector(".eksi");
+       const sil=card.querySelector(".sil");
+       const btn=card.querySelector(".btn");
+       const price=card.querySelector("p").textContent;
+       const fiyat=Number(price.replace(/\D/g,""));
+       geneltoplam+=adet*fiyat;
+       count.textContent=adet;
+       function kaydet(){
+              count.textContent=adet;
+              localStorage.setItem("urun_adet_"+index,adet);
+              gunceltoplam();
+       }
+     btn.addEventListener("click",function(){
+       if(adet===0){
+              adet=1;
+              geneltoplam+=fiyat;
+              kaydet();
+
+       }
+     })  
+     artı.addEventListener("click",function(){
+       if(adet>0){
+              adet++;
+              geneltoplam+=fiyat;
+              kaydet();
+       }
+     })
+     eksi.addEventListener("click",function(){
+       if(adet>0){
+              adet--;
+              geneltoplam-=fiyat;
+              kaydet();
+       }
+     })
+     sil.addEventListener("click",function(){
+       if(adet>0){
+              geneltoplam-=adet*fiyat;
+              adet=0;
+              kaydet();
+       }
+     })
+
+})
+gunceltoplam();

@@ -13,18 +13,18 @@ body{
 
 /* BAŞLIK */
 .total-area{
-  text-align: center;
+  text-align:center;
   font-size: 26px;
   font-weight: bold;
   margin: 20px 0;
   color: white;
 }
 
-/* 🔥 ÜRÜNLER (PRO GRID) */
+/* ÜRÜNLER */
 .products{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(3, 1fr); /* PC */
+  gap: 20px;
   padding: 20px;
   max-width: 1200px;
   margin: auto;
@@ -34,44 +34,49 @@ body{
 .card{
   background-color: blanchedalmond;
   text-align: center;
-  padding: 15px;
+  padding: 8px; /* küçüldü */
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: 0.3s;
 }
 
 .card:hover{
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
 /* RESİM */
 .card img{
   width: 100%;
-  height: 180px;
+  height: 110px; /* küçüldü */
   object-fit: contain;
 }
 
 /* YAZILAR */
 .card h2{
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .card p{
+  font-size: 13px;
   font-weight: bold;
   color: #444;
-  margin: 5px 0;
+  margin: 3px 0;
 }
 
 /* BUTON */
 button{
-  padding: 6px 10px;
+  padding: 4px 6px;
   border-radius: 5px;
   border: none;
   background-color: #3b82f6;
   color: white;
   cursor: pointer;
+  font-size: 12px;
   transition: 0.3s;
 }
 
@@ -82,27 +87,52 @@ button:hover{
 
 .btn{
   width: 100%;
-  margin: 5px 0;
+  margin: 3px 0;
 }
 
 /* ACTION */
 .action{
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 3px;
 }
 
 .artı{ background-color: #22c55e; }
 .eksi{ background-color: #ef4444; }
 .sil{  background-color: #6b7280; }
 
-/* 🔥 KÜÇÜK EKRAN İNCE AYAR */
-@media (max-width: 500px){
-  .card img{
-    height: 140px;
+/* 🔥 TABLET */
+@media (max-width: 992px){
+  .products{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 🔥 TELEFON */
+@media (max-width: 600px){
+  .products{
+    grid-template-columns: repeat(3, 1fr); /* 3 sütun */
+    gap: 10px;
   }
 
   .total-area{
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .card img{
+    height: 90px; /* daha da küçüldü */
+  }
+
+  .card h2{
+    font-size: 13px;
+  }
+
+  .card p{
+    font-size: 11px;
+  }
+
+  button{
+    font-size: 11px;
+    padding: 3px;
   }
 }

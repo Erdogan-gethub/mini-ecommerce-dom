@@ -1,0 +1,206 @@
+/* --- GENEL AYARLAR --- */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#e0e7ff; /* Müşteri tarafındaki gibi mavi arka plan */
+    padding:20px;
+}
+
+/* --- PANEL KONTEYNER --- */
+.panel-container{
+    max-width: 600px; /* Panel biraz daha daralsın */
+    width:100%;
+    margin:40px auto;
+    background:#f4f4f4; /* Müşteri tarafındaki panel rengi */
+    padding:24px;
+    border-radius:16px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* --- BAŞLIK --- */
+h1{
+    text-align:center;
+    margin-bottom:18px;
+    font-size:24px;
+    color:#111;
+    font-weight: 800;
+}
+
+/* --- İSTATİSTİK (Kompakt Hale Geldi) --- */
+.istatistik{
+    background:#fff;
+    border:1px solid #ddd;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+    font-size:12px; /* Yazı küçüldü ki kartlara yer kalsın */
+    font-weight:700;
+    color:#555;
+    margin-bottom:15px;
+}
+
+/* --- FİLTRE (Kompakt Hale Geldi) --- */
+select{
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* --- 🔥 LİSTE ALANI (KRİTİK: İKİLİ DİZİLİM) --- */
+#panelListe{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap; /* Sığmazsa alt satıra geç */
+    gap: 12px; /* Kartlar arası boşluk */
+    justify-content: space-between; /* İki yana yasla */
+}
+
+/* --- 🔥 RANDEVU KARTI (MÜŞTERİ TARAFINDAKİ GİBİ KÜÇÜK VE DİKEY) --- */
+/* --- RANDEVU KARTI (Daha Küçük ve Zarif) --- */
+.randevu-card {
+    width: calc(50% - 8px); /* Yan yana ikili yapı */
+    background: #fff;
+    padding: 10px 5px; /* İç boşlukları daralttık */
+    border-radius: 10px;
+    border-left: 4px solid #d9534f; /* Şeridi incelttik */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* --- KART İÇİ YAZI BOYUTLARI --- */
+
+.kuafor {
+    font-size: 11px; /* Küçüldü */
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.tarih-satir {
+    font-size: 10px; /* Küçüldü */
+    color: #999;
+}
+
+/* SAAT (Gözü yormayacak kadar küçültüldü) */
+.randevu-card strong {
+    display: block;
+    font-size: 20px; /* 28px'den 20px'e çektik */
+    font-weight: 800;
+    color: #222;
+    margin: 4px 0;
+}
+
+.isim {
+    font-size: 13px; /* Küçüldü */
+    font-weight: 700;
+    color: #333;
+}
+
+.hizmet {
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 4px;
+}
+
+/* --- ALT ALAN (Telefon ve Sil) --- */
+.randevu-alt {
+    width: 100%;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.telefon {
+    font-size: 11px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* SİL BUTONU (Küçük ve kibar) */
+button {
+    background: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover{
+    background:#c9302c;
+}
+
+/* --- BOŞ MESAJ --- */
+.bos-mesaj{
+    width: 100%;
+    text-align:center;
+    color:#888;
+    font-size:14px;
+    margin-top:15px;
+}
+
+/* --- MOBİL UYUMLULUK --- */
+@media (max-width: 500px){
+
+    /* Panel nefes alsın */
+    .panel-container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    /* 🔥 Kartlar tek sütun */
+    #panelListe {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .randevu-card{
+        width: 100%;
+        padding: 12px 8px;
+          max-width: 400px;
+    margin: 0 auto;
+    }
+
+    /* Yazılar biraz dengelensin */
+    .randevu-card strong {
+        font-size: 18px;
+    }
+
+    .isim {
+        font-size: 14px;
+    }
+
+    /* Alt kısım düzgün dizilsin */
+    .randevu-alt {
+        gap: 8px;
+    }
+
+    .randevu-alt a,
+    .randevu-alt button {
+        width: 100%;
+    }
+
+    /* 🔥 Telefon taşma fix */
+    .telefon {
+        word-break: break-all;
+    }
+}

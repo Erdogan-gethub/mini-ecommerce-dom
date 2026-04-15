@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randevu Al</title>
+    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+<header class="navbar">
+     <a href="anasayfa.html" class="logo">
+    <img src="images/kuafor.png">
+    <h2>Style Kuaför</h2>
+</a>
+   <nav class="nav-links">
+    <a href="anasayfa.html">Ana Sayfa</a>
+    <a href="randevu.html#randevu-formu" class="cta ">Randevu Al</a>
+    <a href="hizmetler.html">Neden Biz?</a>
+    <a href="iletisim.html">İletişim</a>
+</nav>
+</header>
+<div id="reklamAlani" class="reklam-kapsayici">
+    <div class="atan-yazi-grubu">
+        <h1 class="reklam-logo">STYLE KUAFÖR</h1>
+        <p class="reklam-slogan">Stilinize Can Veriyoruz...</p>
+        
+        <div class="kuafor-imza-alani">
+            <span class="usta-adi">Vedat Erdoğan</span>
+            <img src="images/imza.png" class="gercek-imza" alt="Vedat Erdoğan İmza">
+        </div>
+    </div>
+</div>
+
+<div class="randevu-panel" id="randevu-formu">
+    <section class="randevu">
+        <div class="container"> 
+            <div class="form-alan">
+                <h1>Kuaför Randevu</h1>
+                <p class="calisma-saat">Çalışma Saatleri: 09:00 - 18:00</p>
+                <form id="randevuForm">
+                    <input type="text" id="adsoyad" placeholder="Ad Soyad" required>
+                    <input type="tel" id="telefon" placeholder="Telefon" required>
+
+                    <label for="tarih">Randevu Tarihi</label>
+                    <input type="text" id="tarih" placeholder="Tarih Seçiniz" required>
+
+                    <label for="kuafor">Kuaför Seçiniz</label>
+                    <select id="kuafor" required>
+                        <option value="">Kuaför Seçiniz</option>
+                        <option value="1">Kuaför 1</option>
+                         <option value="2">Kuaför 2</option>
+                          <option value="3">Kuaför 3</option>
+                           <option value="4">Kuaför 4</option>
+
+
+                    </select>
+
+                    <label for="hizmet">Hizmet Seçiniz</label>
+                    <select id="hizmet" required>
+                        <option value="15">Sakal Traşı(15 dk)</option>
+                        <option value="30">Saç Traşı (30 dk)</option>
+                        <option value="45">Saç+Sakal Traşı (45 dk)</option>
+                        <option value="60">Saç+Sakal+Kişisel Bakım(60dk)</option>
+
+                    </select>
+
+   <select id="saat" required disabled>
+    <option value="">Lütfen önce tarih seçin</option>
+</select>
+</select>
+                    </select>
+
+                    <button type="submit" id="randevuOnayBtn">Randevuyu Onayla</button>
+                </form>
+            </div> 
+
+          <div class="randevu-alan">
+    <h2>Günlük Program</h2>
+    <div id="randevuListesi"></div> 
+</div>
+        </div> 
+    </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/tr.js"></script>
+<script src="web.js"></script>
+
+</body>
+</html>

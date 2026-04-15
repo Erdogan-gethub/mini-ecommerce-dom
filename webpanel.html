@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kuaför Paneli</title>
+
+<link rel="stylesheet" href="webpanel.css">
+</head>
+
+<body>
+
+<div class="panel-container">
+
+    <h1>Kuaför Randevu Paneli</h1>
+
+    <!-- 🔥 İSTATİSTİK -->
+    <div id="istatistik" class="istatistik">
+        Bugün: 0 | Toplam: 0
+    </div>
+
+     <!-- 🔥 FİLTRE  -->
+   <div class="filtre-alan">
+         <select id="kuaforFilter">
+            <option value="">Tüm Kuaförler</option>
+            <option value="1">✂Kuaför 1</option>
+            <option value="2">✂Kuaför 2</option>
+            <option value="3">✂Kuaför 3</option>
+            <option value="4">✂Kuaför 4</option>
+        </select>
+    </div>
+
+     <!-- 🔥 RANDEVU LİSTESİ --> 
+    <div id="panelListe"></div>
+
+    <!-- 🔥 BOŞ MESAJ -->
+    <p id="bosMesaj" class="bos-mesaj" style="display:none;">
+        Henüz randevu yok
+    </p>
+
+</div>
+
+<script src="webpanel.js"></script>
+
+</body>
+</html>

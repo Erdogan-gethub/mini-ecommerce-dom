@@ -817,7 +817,9 @@ footer {
     .nav-links a:last-child {
         border-bottom: none;
     }
-
+  .logo {
+        margin-left: -30px;
+    }
 
   
 }

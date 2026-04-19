@@ -645,16 +645,17 @@ footer {
     color: white;
 }
 /* 📱 TABLET + TELEFON */
+/* 📱 TABLET */
 @media (max-width: 1024px) {
 
-    /* 🔥 GENEL LAYOUT */
+    /* GENEL LAYOUT */
     .container {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
 
-    /* 🔥 RESİM GRID */
+    /* RESİM GRID */
     .resim {
         grid-template-columns: 1fr 1fr;
     }
@@ -665,9 +666,9 @@ footer {
         margin-top: 0;
     }
 
-    /* 🔥 RANDEVU (EN KRİTİK) */
+    /* RANDEVU */
     .randevu .container {
-        transform: none; /* 🔥 110px iptal */
+        transform: none;
         flex-direction: column;
         align-items: center;
         gap: 20px;
@@ -683,13 +684,13 @@ footer {
         padding: 0 20px;
     }
 
-    /* 🔥 KARTLAR */
+    /* KARTLAR */
     .kartlar {
         flex-direction: column;
         align-items: center;
     }
 
-    /* 🔥 İLETİŞİM */
+    /* İLETİŞİM */
     .iletisim-container {
         flex-direction: column;
         gap: 30px;
@@ -698,31 +699,15 @@ footer {
     .harita iframe {
         width: 100%;
     }
-
-    /* 🔥 NAVBAR */
-    .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    .logo {
-        position: static;
-        transform: none;
-        margin-bottom: 10px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
 }
 
 
-/* 📱 SADECE TELEFON (DAHA KÜÇÜK EKRAN) */
-@media (max-width: 768px) {
+/* 📱 TELEFON */
+/* PC modunda simgeyi gizlemek için eklenen tek satır */
 
+
+@media (max-width: 768px) {
+   /* LAYOUT */
     .resim {
         grid-template-columns: 1fr;
     }
@@ -744,20 +729,16 @@ footer {
         width: 100%;
     }
 
-    /* 🔥 ASIL DÜZELTME */
     .randevu .container {
         transform: none;
     }
-}
 
-@media (max-width: 768px) {
-
+    /* REKLAM */
     .reklam-kapsayici {
-        position: relative;   /* 🔥 fixed KAPANDI */
+        position: relative;
         top: auto;
         left: auto;
         transform: none;
-
         margin-top: 80px;
         padding: 20px;
     }
@@ -768,5 +749,65 @@ footer {
 
     .reklam-kapsayici h2 {
         font-size: 18px;
+    }
+}
+/* PC (varsayılan) */
+
+/* Mobil */
+/* 📱 TABLET + TELEFON */
+#menuToggle {
+    display: none;
+}
+@media (max-width: 1024px) {
+
+
+    .navbar {
+        position: relative;
+    }
+
+    /* Hamburger */
+    #menuToggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        font-size: 22px;
+        cursor: pointer;
+        z-index:1;
+    }
+
+    /* Menü */
+    .nav-links {
+    position: absolute;
+  
+    left: 120px;
+
+    display: none;
+    flex-direction: row;   /* 🔥 YATAY */
+    gap: 6px;
+
+    padding: 8px 10px;
+    border-radius: 8px;
+
+    width: auto;          /* 🔥 sabit genişliği kaldır */
+
+    z-index: 9999;
+  
+}
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    /* Linkler */
+    .nav-links a {
+        display: block;      /* 🔥 kritik */
+        width: 100%;
+        padding: 8px;
+        font-size: 11px;
+        
+    }
+    .logo{
+        left: 25px;
     }
 }
